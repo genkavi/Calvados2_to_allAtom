@@ -63,5 +63,37 @@ The following dependencies are required to run `complete_structure_modeller.py`:
 
 ---
 
+### Use Case: Processing a Trajectory with VMD and `complete_structure_modeller.py`
 
+This example demonstrates how to process a Calvados2 trajectory file (`traj.dcd`) and convert selected frames from a coarse-grained simulation into all-atom representations using `complete_structure_modeller.py`. The workflow uses VMD to extract frames and rename residues, followed by Modeller for structure refinement.
+
+#### Workflow:
+
+1. **Extract and Process Frames with VMD**  
+   The following script selects residues, renames them, and saves specific frames as PDB files:
+   ```bash
+   vmd -dispdev text test/top.pdb test/traj.dcd <<EOF
+   set a [ atomselect top "resname X"]
+   \$a set resname R
+
+   set a [ atomselect top "resname Z"]
+   \$a set resname Q
+
+   set all [ atomselect top all ]
+
+   foreach frame "500 600 700 800 900 1000" {
+       \$all frame \$frame
+       \$all writepdb \$frame.pdb
+   }
+
+   exit
+   EOF
+
+   for f in 500 600 700 800 900 1000
+   do 
+        python complete_structure_modeller.py \$f.pdb \$f.aa.pdb
+   done
+
+```
+---
 
