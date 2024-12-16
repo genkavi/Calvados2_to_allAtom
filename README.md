@@ -33,7 +33,7 @@ python complete_structure_modeller.py input.pdb output.pdb
 
 ---
 
-### check_cis_modeller.py
+### `check_cis_modeller.py`
 
 This script is designed to identify and correct cis-peptides in protein structures, particularly in **Intrinsically Disordered Regions (IDRs)**. It analyzes the omega dihedral angles between residues and applies corrections to cis-peptides to ensure proper stereochemistry.
 
