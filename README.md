@@ -3,18 +3,7 @@
 This repository contains tools for converting **Calvados2 simulation** for **Intrinsically Disordered Regions (IDRs)** outputs into all-atom structures. 
 ## Included Scripts
 
-### `check_cis_modeller.py`
-- **Purpose**: Identifies and corrects cis-peptides in protein structures, particularly in IDRs.
-- **Features**:
-  - Detects cis-peptides by analyzing omega dihedral angles.
-  - Corrects cis-peptides by adjusting atomic coordinates and reflecting relevant atoms.
-  - Optimizes modified residues to maintain stereochemical integrity.
-- **Usage**:
-  ```bash
-  python check_cis_modeller.py input.pdb
-```
-
-### complete_structure_modeller.py
+### `complete_structure_modeller.py`
 
 This script is designed to convert **Calvados2** coarse-grained simulation outputs into refined all-atom structures. It adds missing atoms, corrects cis-peptides, and refines the structure to ensure stereochemical accuracy and structural stability.
 ---
