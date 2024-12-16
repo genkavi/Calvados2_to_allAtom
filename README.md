@@ -6,7 +6,6 @@ This repository contains tools for converting **Calvados2 simulation** for **Int
 ### `complete_structure_modeller.py`
 
 This script is designed to convert **Calvados2** coarse-grained simulation outputs into refined all-atom structures. It adds missing atoms, corrects cis-peptides, and refines the structure to ensure stereochemical accuracy and structural stability.
----
 
 #### Key Features
 
@@ -49,6 +48,9 @@ This script is designed to identify and correct cis-peptides in protein structur
 
 ```bash
 python check_cis_modeller.py input.pdb
+```
+
+---
 
 ## Dependencies
 
@@ -58,6 +60,8 @@ The following dependencies are required to run `complete_structure_modeller.py`:
 - Modeller
 - Numpy
 
+
+---
 
 
 
