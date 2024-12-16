@@ -62,8 +62,9 @@ This example demonstrates how to process a Calvados2 trajectory file (`traj.dcd`
 1. **Extract and Process Frames with VMD**  
    The following script selects residues, renames them, and saves specific frames as PDB files:
    ```bash
-   # Calvados2 labels the first and the last residues as X and Z.  We can either remove them or assign them their correct residue names. 
    vmd -dispdev text test/top.pdb test/traj.dcd <<EOF
+
+   \# Calvados2 labels the first and the last residues as X and Z.  We can either remove them or assign them their correct residue names. 
    set a [ atomselect top "resname X"]
    \$a set resname R
 
