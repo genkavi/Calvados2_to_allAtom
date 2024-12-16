@@ -8,22 +8,12 @@ This repository contains tools for converting **Calvados2 simulation** for **Int
 This script is designed to convert **Calvados2** coarse-grained simulation outputs into refined all-atom structures. It adds missing atoms, corrects cis-peptides, and refines the structure to ensure stereochemical accuracy and structural stability.
 
 #### Key Features
-
-1. **Conversion from Single-Bead to All-Atom Structures**:
-   - Converts coarse-grained amino acid representations (single-bead) into detailed all-atom structures.
-
-2. **Correction of Cis-Peptides**:
-   - Detects cis-peptides by analyzing omega dihedral angles.
-   - Corrects cis-peptides by reflecting atomic coordinates of affected residues.
-
-3. **Addition of Missing Atoms**:
-   - Adds missing heavy atoms to ensure the structural integrity of the all-atom model.
-
-4. **Structure Refinement**:
-   - Applies stereochemical restraints and ensures proper geometry using molecular dynamics optimization and conjugate gradient minimization.
-
-5. **Iterative Correction**:
-   - Iteratively optimizes the structure until no cis-peptides remain.
+- Converts coarse-grained amino acid representations (single-bead) into detailed all-atom structures.
+- Detects cis-peptides by analyzing omega dihedral angles.
+- Corrects cis-peptides by reflecting atomic coordinates of affected residues.
+- Adds missing heavy atoms to ensure the structural integrity of the all-atom model.
+- Applies stereochemical restraints and ensures proper geometry using molecular dynamics optimization and conjugate gradient minimization.
+- Iteratively optimizes the structure until no cis-peptides remain.
 
 ## Usage
 
@@ -72,6 +62,7 @@ This example demonstrates how to process a Calvados2 trajectory file (`traj.dcd`
 1. **Extract and Process Frames with VMD**  
    The following script selects residues, renames them, and saves specific frames as PDB files:
    ```bash
+   # Calvados2 labels the first and the last residues as X and Z.  We can either remove them or assign them their correct residue names. 
    vmd -dispdev text test/top.pdb test/traj.dcd <<EOF
    set a [ atomselect top "resname X"]
    \$a set resname R
